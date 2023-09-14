@@ -1,9 +1,11 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-years = []
-co2 = []
-temp = []
+df = pd.read_csv("climate.csv")
+
+years = df['Year']
+co2 = df['CO2']
+temp = df['Temperature']
 
 plt.subplot(2, 1, 1)
 plt.plot(years, co2, 'b--') 
@@ -16,5 +18,5 @@ plt.plot(years, temp, 'r*-')
 plt.ylabel("Temp (C)") 
 plt.xlabel("Year (decade)") 
 plt.show() 
-plt.savefig("co2_temp_2.png") 
+plt.savefig("co2_temp_2.png")
 
